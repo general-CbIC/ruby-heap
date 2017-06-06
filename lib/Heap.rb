@@ -1,5 +1,5 @@
 require "Heap/version"
 
 module Heap
-  # todo
+  require 'Heap/hello_world/hello'
 end
