@@ -22,7 +22,10 @@ module Heap
       end
 
       def extract_min!
-        # TODO: to return and remove min element
+        swap(1, count)
+        el = @elements.pop
+        swim_down(1)
+        el
       end
 
       private
@@ -39,6 +42,35 @@ module Heap
         return if @elements[parent_index - 1] <= @elements[index - 1]
         swap(parent_index, index)
         swim_up parent_index
+      end
+
+      def swim_down(index)
+        child1_index = 2 * index
+        child2_index = 2 * index + 1
+        return if @elements[child1_index - 1].nil? && @elements[child2_index - 1].nil?
+        if @elements[child2_index - 1].nil?
+          return if @elements[child1_index - 1] >= @elements[index - 1]
+          swap(index, child1_index)
+          swim_down(child1_index)
+        else
+          if @elements[child2_index - 1] >= @elements[index - 1] && @elements[child1_index - 1] >= @elements[index - 1]
+            return
+          elsif @elements[child2_index - 1] < @elements[index - 1] && @elements[child1_index - 1] < @elements[index - 1]
+            if @elements[child2_index - 1] < @elements[child1_index - 1]
+              swap(child2_index, index)
+              swim_down(child2_index)
+            else
+              swap(child1_index, index)
+              swim_down(child1_index)
+            end
+          elsif @elements[child2_index - 1] < @elements[index - 1]
+            swap(child2_index, index)
+            swim_down(child2_index)
+          elsif @elements[child1_index - 1] < @elements[index - 1]
+            swap(child1_index, index)
+            swim_down(child1_index)
+          end
+        end
       end
     end
   end

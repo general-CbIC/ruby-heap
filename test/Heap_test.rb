@@ -16,4 +16,12 @@ class HeapTest < Minitest::Test
     assert_equal 5, b_heap.count
     assert_equal 1, b_heap.extract_min
   end
+
+  def test_binary_min_heap_extract_min
+    b_heap = Heap::BinaryHeap::MinHeap.new([3, 2, 5, 7])
+    b_min = b_heap.extract_min!
+    assert_equal 2, b_min
+    assert_equal 3, b_heap.count
+    assert_equal 3, b_heap.extract_min
+  end
 end
