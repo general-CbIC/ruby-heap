@@ -7,7 +7,7 @@ Gem is using for making Heaps (binary only for now).
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'Heap'
+gem 'ruby-heap'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install Heap
+    $ gem install ruby-heap
 
 ## Usage
 
