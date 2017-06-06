@@ -20,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+#### Binary Heap with min root
+```ruby
+require 'Heap'
+
+# Initialize
+b_heap = Heap::BinaryHeap::MinHeap.new([2, 3, 1, -1])
+
+b_heap.elements     # [-1, 1, 3, 2]
+b_heap.count        # 4
+b_heap.extract_min  # -1; Only show min element
+b_heap.extract_min! # Show and remove it!
+b_heap.count        # 3
+b_heap.elements     # [1, 2, 3]
+```
 
 ## Development
 
