@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'Heap/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'Heap'
+  spec.name          = 'ruby-heap'
   spec.version       = Heap::VERSION
   spec.authors       = ['Alexandr Sysoev']
   spec.email         = ['sanchous.ok@gmail.com']
