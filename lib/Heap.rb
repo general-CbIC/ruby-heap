@@ -1,5 +1,5 @@
 require "Heap/version"
 
 module Heap
-  require 'Heap/hello_world/hello'
+  require 'Heap/binary_heap/binary_heap'
 end
