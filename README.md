@@ -1,4 +1,4 @@
-# Heap
+# Heap (ruby heapsort)
 
 Gem is using for making Heaps (binary only for now).
 
@@ -30,6 +30,7 @@ b_heap = Heap::BinaryHeap::MinHeap.new([2, 3, 1, -1])
 b_heap.elements     # [-1, 1, 3, 2]
 b_heap.count        # 4
 b_heap.extract_min  # -1; Only show min element
+
 b_heap.extract_min! # Show and remove it!
 b_heap.count        # 3
 b_heap.elements     # [1, 2, 3]
@@ -43,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/pups3s/ruby-heap. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [Project page](https://github.com/pups3s/ruby-heap). This project is intended to be a safe, welcoming space for collaboration.
 
 
 ## License
