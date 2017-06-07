@@ -27,11 +27,21 @@ require 'Heap'
 # Initialize
 b_heap = Heap::BinaryHeap::MinHeap.new([2, 3, 1, -1])
 
+# Return elements in Heap (read access only)
 b_heap.elements     # [-1, 1, 3, 2]
-b_heap.count        # 4
-b_heap.extract_min  # -1; Only show min element
 
-b_heap.extract_min! # Show and remove it!
+# Return sorted array (heap-sort) without
+# changing elements in heap
+b_heap.sort         # [-1, 1, 2, 3]
+
+# Count of elements in Heap
+b_heap.count        # 4
+
+# Return min element without removing from Heap
+b_heap.extract_min  # -1
+
+# Return min element and remove it from Heap
+b_heap.extract_min! # -1
 b_heap.count        # 3
 b_heap.elements     # [1, 2, 3]
 ```
