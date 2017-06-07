@@ -28,6 +28,14 @@ module Heap
         el
       end
 
+      def sort
+        el_temp = @elements.clone
+        result = []
+        result.push extract_min! while count > 0
+        @elements = el_temp
+        result
+      end
+
       private
 
       def swap(index1, index2)
