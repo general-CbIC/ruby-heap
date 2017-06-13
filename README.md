@@ -21,6 +21,8 @@ Or install it yourself as:
 ## Usage
 
 #### Binary Heap with min root
+While Heap initialize you can add any comparable object in it (not numbers only).
+Objects must have compare functions (>, >=, <, <=).
 ```ruby
 require 'Heap'
 
@@ -44,6 +46,32 @@ b_heap.extract_min  # -1
 b_heap.extract_min! # -1
 b_heap.count        # 3
 b_heap.elements     # [1, 2, 3]
+```
+
+#### Same practice with max root
+```ruby
+require 'Heap'
+
+# Initialize
+b_heap = Heap::BinaryHeap::MaxHeap.new([2, 3, 1, -1])
+
+# Return elements in Heap (read access only)
+b_heap.elements     # [3, 2, 1, -1]
+
+# Return sorted array (heap-sort) without
+# changing elements in heap
+b_heap.sort         # [3, 2, 1, -1]
+
+# Count of elements in Heap
+b_heap.count        # 4
+
+# Return min element without removing from Heap
+b_heap.extract_max  # 3
+
+# Return min element and remove it from Heap
+b_heap.extract_max! # 3
+b_heap.count        # 3
+b_heap.elements     # [2, -1, 1]
 ```
 
 ## Development
