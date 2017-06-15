@@ -20,12 +20,20 @@ class HeapTest < Minitest::Test
     b_heap.add 1
     assert_equal 5, b_heap.count
     assert_equal 1, b_heap.extract_min
+
+    b_heap.add [-1, 2]
+    assert_equal 7, b_heap.count
+    assert_equal(-1, b_heap.extract_min)
   end
 
   def test_bin_max_heap_add_and_max
     b_heap = Heap::BinaryHeap::MaxHeap.new([3, 2, 5, 7])
     b_heap.add 1
     assert_equal 5, b_heap.count
+    assert_equal 7, b_heap.extract_max
+
+    b_heap.add [-1, 2]
+    assert_equal 7, b_heap.count
     assert_equal 7, b_heap.extract_max
   end
 
