@@ -46,6 +46,13 @@ b_heap.extract_min  # -1
 b_heap.extract_min! # -1
 b_heap.count        # 3
 b_heap.elements     # [1, 2, 3]
+
+# Also you can add elements with "add" function
+b_heap.add -1
+b_heap.elements     # [-1, 1, 3, 2]
+b_heap.add [0, 9, 200, -15, 6]
+b_heap.elements     # [-15, -1, 3, 0, 1, 9, 200, 2, 6]
+b_heap.sort         # [-15, -1, 0, 1, 2, 3, 6, 9, 200]
 ```
 
 #### Same practice with max root
@@ -72,6 +79,13 @@ b_heap.extract_max  # 3
 b_heap.extract_max! # 3
 b_heap.count        # 3
 b_heap.elements     # [2, -1, 1]
+
+# Also you can add elements with "add" function
+b_heap.add -1
+b_heap.elements     # [2, -1, 1, -1]
+b_heap.add [0, 9, 200, -15, 6]
+b_heap.elements     # [200, 6, 9, 0, -1, 1, 2, -15, -1]
+b_heap.sort         # [200, 9, 6, 2, 1, 0, -1, -1, -15]
 ```
 
 ## Development

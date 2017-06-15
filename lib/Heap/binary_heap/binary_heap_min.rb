@@ -9,8 +9,15 @@ module Heap
       end
 
       def add(element)
-        @elements.push element
-        swim_up(count)
+        if element.is_a? Array
+          element.each do |el|
+            @elements.push el
+            swim_up(count)
+          end
+        else
+          @elements.push element
+          swim_up(count)
+        end
       end
 
       def count
