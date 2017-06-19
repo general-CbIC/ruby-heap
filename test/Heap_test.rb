@@ -66,4 +66,15 @@ class HeapTest < Minitest::Test
     assert_equal [10, 7, 5, 5, 3, 2, 2, -1, -8], sorted
     assert_equal 9, b_heap.count
   end
+
+  def test_binary_heap_merge
+    b_heap1 = Heap::BinaryHeap::MinHeap.new [1, 2, 6, 3]
+    b_heap2 = Heap::BinaryHeap::MaxHeap.new [1, 3, 2, -1]
+    b_heap1.add b_heap2
+    b_heap2.add b_heap1
+    assert_equal 8, b_heap1.count
+    assert_equal 12, b_heap2.count
+    assert_equal (- 1), b_heap1.extract_min
+    assert_equal 6, b_heap2.extract_max
+  end
 end

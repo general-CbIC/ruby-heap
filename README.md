@@ -88,6 +88,21 @@ b_heap.elements     # [200, 6, 9, 0, -1, 1, 2, -15, -1]
 b_heap.sort         # [200, 9, 6, 2, 1, 0, -1, -1, -15]
 ```
 
+#### Heap merging
+```ruby
+require 'Heap'
+
+# Initialize heaps
+min_heap = Heap::BinaryHeap::MinHeap.new [1, 2, 3]
+max_heap = Heap::BinaryHeap::MaxHeap.new [9, -1, 4]
+
+# Merge heaps
+min_heap.add max_heap
+
+min_heap.count    # 6
+min_heap.sort     # [-1, 1, 2, 3, 4, 9]
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

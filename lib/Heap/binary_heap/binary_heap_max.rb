@@ -14,6 +14,8 @@ module Heap
             @elements.push el
             swim_up(count)
           end
+        elsif defined? element.elements
+          add element.elements
         else
           @elements.push element
           swim_up(count)
