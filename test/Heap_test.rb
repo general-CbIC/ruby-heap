@@ -107,4 +107,43 @@ class HeapTest < Minitest::Test
     assert_equal 3, m_heap.count
     assert_equal 5, m_heap.extract_max
   end
+
+  def test_multiple_max_heap_sort
+    m_heap = Heap::MultipleHeap::MaxHeap.new(5, [3, 2, 5, 7, -1, 10, 2, 5, -8])
+    sorted = m_heap.sort
+    assert_equal [10, 7, 5, 5, 3, 2, 2, -1, -8], sorted
+    assert_equal 9, m_heap.count
+  end
+
+  # MULTIPLE MIN HEAP
+  def test_multiple_min_heap_count
+    m_heap = Heap::MultipleHeap::MinHeap.new(5, [10, 20, 30, 5])
+    assert_equal 4, m_heap.count
+  end
+
+  def test_mult_min_heap_add_and_min
+    m_heap = Heap::MultipleHeap::MinHeap.new(7, [3, 2, 5, 7])
+    m_heap.add 4
+    assert_equal 5, m_heap.count
+    assert_equal 2, m_heap.extract_min
+
+    m_heap.add [0, 10, 23]
+    assert_equal 8, m_heap.count
+    assert_equal 0, m_heap.extract_min
+  end
+
+  def test_mult_min_heap_extract_min
+    m_heap = Heap::MultipleHeap::MinHeap.new(3, [3, 2, 5, 7])
+    m_min = m_heap.extract_min!
+    assert_equal 2, m_min
+    assert_equal 3, m_heap.count
+    assert_equal 3, m_heap.extract_min
+  end
+
+  def test_multiple_min_heap_sort
+    m_heap = Heap::MultipleHeap::MinHeap.new(5, [3, 2, 5, 7, -1, 10, 2, 5, -8])
+    sorted = m_heap.sort
+    assert_equal [-8, -1, 2, 2, 3, 5, 5, 7, 10], sorted
+    assert_equal 9, m_heap.count
+  end
 end
