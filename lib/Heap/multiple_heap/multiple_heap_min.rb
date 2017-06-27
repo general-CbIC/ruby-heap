@@ -1,6 +1,6 @@
 module Heap
   module MultipleHeap
-    class MaxHeap
+    class MinHeap
       attr_reader :elements
       attr_reader :d
 
@@ -28,11 +28,11 @@ module Heap
         @elements.length
       end
 
-      def extract_max
+      def extract_min
         @elements[0]
       end
 
-      def extract_max!
+      def extract_min!
         swap(1, count)
         el = @elements.pop
         swim_down(1)
@@ -42,7 +42,7 @@ module Heap
       def sort
         el_temp = @elements.clone
         result = []
-        result.push extract_max! while count > 0
+        result.push extract_min! while count > 0
         @elements = el_temp
         result
       end
@@ -58,7 +58,7 @@ module Heap
       def swim_up(index)
         return if index == 1
         parent_index = ((index + 1) / @d).floor
-        return if @elements[parent_index - 1] >= @elements[index - 1]
+        return if @elements[parent_index - 1] <= @elements[index - 1]
         swap(parent_index, index)
         swim_up parent_index
       end
@@ -71,11 +71,11 @@ module Heap
 
         children = {}
         child_indexes.each { |ind| children[@elements[ind - 1]] = ind }
-        max_child = children.max
+        min_child = children.min
 
-        return if @elements[index - 1] >= max_child[0]
-        swap index, max_child[1]
-        swim_down max_child[1]
+        return if @elements[index - 1] <= min_child[0]
+        swap index, min_child[1]
+        swim_down min_child[1]
       end
     end
   end
