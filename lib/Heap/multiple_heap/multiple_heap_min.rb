@@ -1,33 +1,7 @@
 module Heap
   module MultipleHeap
-    class MinHeap
-      attr_reader :elements
-      attr_reader :d
-
-      def initialize(d, elements = [])
-        @elements = []
-        @d = d
-        add(elements.pop) until elements.empty?
-      end
-
-      def add(element)
-        if element.is_a? Array
-          element.each do |el|
-            @elements.push el
-            swim_up(count)
-          end
-        elsif defined? element.elements
-          add element.elements
-        else
-          @elements.push element
-          swim_up(count)
-        end
-      end
-
-      def count
-        @elements.length
-      end
-
+    # Multiple Heap with min root
+    class MinHeap < MultipleHeap
       def extract_min
         @elements[0]
       end
@@ -49,12 +23,6 @@ module Heap
 
       private
 
-      def swap(index1, index2)
-        temp = @elements[index1 - 1]
-        @elements[index1 - 1] = @elements[index2 - 1]
-        @elements[index2 - 1] = temp
-      end
-
       def swim_up(index)
         return if index == 1
         parent_index = ((index.to_f - 1) / @d).ceil
@@ -64,13 +32,8 @@ module Heap
       end
 
       def swim_down(index)
-        child_indexes = []
-        (2..(@d + 1)).each { |i| child_indexes.push((index - 1) * @d + i) }
-        child_indexes.delete_if { |ind| ind > count }
-        return if child_indexes.empty?
-
-        children = {}
-        child_indexes.each { |ind| children[@elements[ind - 1]] = ind }
+        children = get_children index
+        return if children.nil? || children.empty?
         min_child = children.min
 
         return if @elements[index - 1] <= min_child[0]
