@@ -4,11 +4,6 @@ module Heap
     class BinaryHeap
       attr_reader :elements
 
-      def initialize(elements = [])
-        @elements = []
-        add(elements.pop) until elements.empty?
-      end
-
       def add(element)
         if element.is_a? Array
           element.each do |el|
@@ -28,6 +23,11 @@ module Heap
       end
 
       protected
+
+      def initialize(elements = [])
+        @elements = []
+        add(elements.pop) until elements.empty?
+      end
 
       def swap(index1, index2)
         temp = @elements[index1 - 1]

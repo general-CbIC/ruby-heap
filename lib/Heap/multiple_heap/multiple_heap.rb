@@ -5,12 +5,6 @@ module Heap
       attr_reader :elements
       attr_reader :d
 
-      def initialize(d, elements = [])
-        @elements = []
-        @d = d
-        add(elements.pop) until elements.empty?
-      end
-
       def add(element)
         if element.is_a? Array
           element.each do |el|
@@ -31,6 +25,12 @@ module Heap
 
       protected
 
+      def initialize(d, elements = [])
+        @elements = []
+        @d = d
+        add(elements.pop) until elements.empty?
+      end
+      
       def swap(index1, index2)
         temp = @elements[index1 - 1]
         @elements[index1 - 1] = @elements[index2 - 1]
