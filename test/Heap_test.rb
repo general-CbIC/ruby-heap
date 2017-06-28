@@ -146,4 +146,15 @@ class HeapTest < Minitest::Test
     assert_equal [-8, -1, 2, 2, 3, 5, 5, 7, 10], sorted
     assert_equal 9, m_heap.count
   end
+
+  # MULTIPLE BOTH HEAPS
+  def test_mult_heap_merge
+    min_heap = Heap::MultipleHeap::MinHeap.new(4, [3, 5, 3, 6])
+    max_heap = Heap::MultipleHeap::MaxHeap.new(8, [2, -1, 5, 7])
+
+    min_heap.add max_heap
+    assert_equal 8, min_heap.count
+    assert_equal 4, max_heap.count
+    assert_equal [-1, 2, 3, 3, 5, 5, 6, 7], min_heap.sort
+  end
 end

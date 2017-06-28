@@ -57,7 +57,7 @@ module Heap
 
       def swim_up(index)
         return if index == 1
-        parent_index = ((index + 1) / @d).floor
+        parent_index = ((index.to_f - 1) / @d).ceil
         return if @elements[parent_index - 1] <= @elements[index - 1]
         swap(parent_index, index)
         swim_up parent_index
