@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/ruby-heap.svg)](https://badge.fury.io/rb/ruby-heap)
+[![Code Climate](https://codeclimate.com/github/pups3s/ruby-heap/badges/gpa.svg)](https://codeclimate.com/github/pups3s/ruby-heap)
 # Heap (ruby heapsort)
 
 Gem is using for making Heaps (binary only for now).
