@@ -21,6 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
+### Binary Heaps
+
 #### Binary Heap with min root
 While Heap initialize you can add any comparable object in it (not numbers only).
 Objects must have compare functions (>, >=, <, <=).
@@ -102,6 +104,19 @@ min_heap.add max_heap
 
 min_heap.count    # 6
 min_heap.sort     # [-1, 1, 2, 3, 4, 9]
+```
+
+### Multiple Heaps
+
+Multiple (d-ary) heaps have **same methods as binary**. But initialize differs:
+
+```ruby
+require 'Heap'
+
+# First param is "d" of heap
+# Second param is optional and can contain first elements
+min_heap = Heap::MultipleHeap::MinHeap.new(5, [10, 20, 30])
+max_heap = Heap::MultipleHeap::MaxHeap.new(7)
 ```
 
 ## Development

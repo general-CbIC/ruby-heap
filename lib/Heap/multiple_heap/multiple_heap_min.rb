@@ -1,10 +1,12 @@
 module Heap
-  module BinaryHeap
+  module MultipleHeap
     class MinHeap
       attr_reader :elements
+      attr_reader :d
 
-      def initialize(elements = [])
+      def initialize(d, elements = [])
         @elements = []
+        @d = d
         add(elements.pop) until elements.empty?
       end
 
@@ -55,39 +57,25 @@ module Heap
 
       def swim_up(index)
         return if index == 1
-        parent_index = index / 2
+        parent_index = ((index.to_f - 1) / @d).ceil
         return if @elements[parent_index - 1] <= @elements[index - 1]
         swap(parent_index, index)
         swim_up parent_index
       end
 
       def swim_down(index)
-        child1_index = 2 * index
-        child2_index = 2 * index + 1
-        return if @elements[child1_index - 1].nil? && @elements[child2_index - 1].nil?
-        if @elements[child2_index - 1].nil?
-          return if @elements[child1_index - 1] >= @elements[index - 1]
-          swap(index, child1_index)
-          swim_down(child1_index)
-        else
-          if @elements[child2_index - 1] >= @elements[index - 1] && @elements[child1_index - 1] >= @elements[index - 1]
-            return
-          elsif @elements[child2_index - 1] < @elements[index - 1] && @elements[child1_index - 1] < @elements[index - 1]
-            if @elements[child2_index - 1] < @elements[child1_index - 1]
-              swap(child2_index, index)
-              swim_down(child2_index)
-            else
-              swap(child1_index, index)
-              swim_down(child1_index)
-            end
-          elsif @elements[child2_index - 1] < @elements[index - 1]
-            swap(child2_index, index)
-            swim_down(child2_index)
-          elsif @elements[child1_index - 1] < @elements[index - 1]
-            swap(child1_index, index)
-            swim_down(child1_index)
-          end
-        end
+        child_indexes = []
+        (2..(@d + 1)).each { |i| child_indexes.push((index - 1) * @d + i) }
+        child_indexes.delete_if { |ind| ind > count }
+        return if child_indexes.empty?
+
+        children = {}
+        child_indexes.each { |ind| children[@elements[ind - 1]] = ind }
+        min_child = children.min
+
+        return if @elements[index - 1] <= min_child[0]
+        swap index, min_child[1]
+        swim_down min_child[1]
       end
     end
   end
