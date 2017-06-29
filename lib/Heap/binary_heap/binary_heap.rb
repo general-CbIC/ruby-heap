@@ -1,38 +1,13 @@
 module Heap
   module BinaryHeap
     # Binary Heap template
-    class BinaryHeap
-      attr_reader :elements
+    class BinaryHeap < HeapTemplate
+
+      protected
 
       def initialize(elements = [])
         @elements = []
         add(elements.pop) until elements.empty?
-      end
-
-      def add(element)
-        if element.is_a? Array
-          element.each do |el|
-            @elements.push el
-            swim_up(count)
-          end
-        elsif defined? element.elements
-          add element.elements
-        else
-          @elements.push element
-          swim_up(count)
-        end
-      end
-
-      def count
-        @elements.length
-      end
-
-      protected
-
-      def swap(index1, index2)
-        temp = @elements[index1 - 1]
-        @elements[index1 - 1] = @elements[index2 - 1]
-        @elements[index2 - 1] = temp
       end
 
       def get_children(index)
