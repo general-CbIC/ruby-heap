@@ -3,22 +3,11 @@ module Heap
     # Binary Heap with max root
     class MaxHeap < BinaryHeap
       def extract_max
-        @elements[0]
+        extract_root
       end
 
       def extract_max!
-        swap(1, count)
-        el = @elements.pop
-        swim_down(1)
-        el
-      end
-
-      def sort
-        el_temp = @elements.clone
-        result = []
-        result.push extract_max! while count > 0
-        @elements = el_temp
-        result
+        extract_root!
       end
 
       private

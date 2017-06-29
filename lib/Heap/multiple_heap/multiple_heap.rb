@@ -1,27 +1,8 @@
 module Heap
   module MultipleHeap
     # Multiple Heap template
-    class MultipleHeap
-      attr_reader :elements
+    class MultipleHeap < HeapTemplate
       attr_reader :d
-
-      def add(element)
-        if element.is_a? Array
-          element.each do |el|
-            @elements.push el
-            swim_up(count)
-          end
-        elsif defined? element.elements
-          add element.elements
-        else
-          @elements.push element
-          swim_up(count)
-        end
-      end
-
-      def count
-        @elements.length
-      end
 
       protected
 
@@ -29,12 +10,6 @@ module Heap
         @elements = []
         @d = d
         add(elements.pop) until elements.empty?
-      end
-      
-      def swap(index1, index2)
-        temp = @elements[index1 - 1]
-        @elements[index1 - 1] = @elements[index2 - 1]
-        @elements[index2 - 1] = temp
       end
 
       def get_children(index)
