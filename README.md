@@ -1,8 +1,10 @@
 [![Gem Version](https://badge.fury.io/rb/ruby-heap.svg)](https://badge.fury.io/rb/ruby-heap)
 [![Code Climate](https://codeclimate.com/github/pups3s/ruby-heap/badges/gpa.svg)](https://codeclimate.com/github/pups3s/ruby-heap)
-# Heap (ruby heapsort)
 
-Gem is using for making Heaps (binary only for now).
+[Русская версия](README_ru.md)
+
+# Heap (ruby heapsort)
+Gem is using for making Heaps.
 
 ## Installation
 
@@ -76,10 +78,10 @@ b_heap.sort         # [3, 2, 1, -1]
 # Count of elements in Heap
 b_heap.count        # 4
 
-# Return min element without removing from Heap
+# Return max element without removing from Heap
 b_heap.extract_max  # 3
 
-# Return min element and remove it from Heap
+# Return max element and remove it from Heap
 b_heap.extract_max! # 3
 b_heap.count        # 3
 b_heap.elements     # [2, -1, 1]
@@ -120,15 +122,9 @@ min_heap = Heap::MultipleHeap::MinHeap.new(5, [10, 20, 30])
 max_heap = Heap::MultipleHeap::MaxHeap.new(7)
 ```
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [Project page](https://github.com/pups3s/ruby-heap). This project is intended to be a safe, welcoming space for collaboration.
+Bug reports and pull requests are welcome on GitHub at [Project page](https://github.com/pups3s/ruby-heap).
 
 
 ## License
