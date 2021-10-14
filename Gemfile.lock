@@ -6,17 +6,17 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.11.1)
+    minitest (5.14.4)
     rake (13.0.6)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-20
 
 DEPENDENCIES
-  bundler (~> 1.14)
+  bundler (>= 2.2.10)
   minitest (~> 5.0)
   rake (~> 13.0)
   ruby-heap!
 
 BUNDLED WITH
-   1.16.1
+   2.2.29
