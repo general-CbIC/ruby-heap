@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    ruby-heap (1.0.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.11.1)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.14)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+  ruby-heap!
+
+BUNDLED WITH
+   1.16.1
