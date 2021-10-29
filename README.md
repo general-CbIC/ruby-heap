@@ -6,7 +6,7 @@
 [Русская версия](README_ru.md)
 
 # Heap (ruby heapsort)
-Gem is using for making Heaps.
+Gem is used to create Heap structs and sort via [Heapsort algorithm](https://en.wikipedia.org/wiki/Heapsort).
 
 ## Installation
 
