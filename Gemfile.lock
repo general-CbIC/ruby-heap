@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-heap (1.0.2)
+    ruby-heap (1.0.4)
 
 GEM
   remote: https://rubygems.org/
