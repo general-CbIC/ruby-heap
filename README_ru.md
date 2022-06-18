@@ -1,3 +1,5 @@
+# Heap (ruby сортировка кучей)
+
 [![Gem Version](https://badge.fury.io/rb/ruby-heap.svg)](https://badge.fury.io/rb/ruby-heap)
 [![Code Climate](https://codeclimate.com/github/pups3s/ruby-heap/badges/gpa.svg)](https://codeclimate.com/github/pups3s/ruby-heap)
 
@@ -14,19 +16,25 @@ gem 'ruby-heap'
 
 Затем выполните:
 
-    $ bundle
+```bash
+bundle
+```
 
 Или установите библиотеку отдельно, выполнив:
 
-    $ gem install ruby-heap
+```bash
+gem install ruby-heap
+```
 
 ## Использование
 
 ### Двоичные кучи
 
 #### Двоичная куча с минимальным корнем
+
 Во время инициализации (и после создания кучи) Вы можете добавить в нее любые сравниваемые объекты (не только числа).
 Используемые объекты должны иметь функции сравнения (>, >=, <, <=).
+
 ```ruby
 require 'Heap'
 
@@ -61,6 +69,7 @@ b_heap.sort         # [-15, -1, 0, 1, 2, 3, 6, 9, 200]
 ```
 
 #### Те же действия с кучей (с максимальным корнем)
+
 ```ruby
 require 'Heap'
 
@@ -95,6 +104,7 @@ b_heap.sort         # [200, 9, 6, 2, 1, 0, -1, -1, -15]
 ```
 
 #### Слияние куч
+
 ```ruby
 require 'Heap'
 
@@ -125,7 +135,6 @@ max_heap = Heap::MultipleHeap::MaxHeap.new(7)
 ## Вклад в проект
 
 **Баг репорты** и **pull реквесты** приветствуются на GitHub [Страница проекта](https://github.com/pups3s/ruby-heap).
-
 
 ## Лицензия
 
