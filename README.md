@@ -1,6 +1,7 @@
+# Heap (ruby heapsort)
+
 [![Gem Version](https://badge.fury.io/rb/ruby-heap.svg)](https://badge.fury.io/rb/ruby-heap)
 [![Gem](https://img.shields.io/gem/dt/ruby-heap.svg)](https://rubygems.org/gems/ruby-heap)
-[![Build Status](https://travis-ci.org/pups3s/ruby-heap.svg?branch=master)](https://travis-ci.org/pups3s/ruby-heap)
 [![Code Climate](https://codeclimate.com/github/pups3s/ruby-heap/badges/gpa.svg)](https://codeclimate.com/github/pups3s/ruby-heap)
 
 [Русская версия](README_ru.md)
@@ -18,19 +19,25 @@ gem 'ruby-heap'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install ruby-heap
+```bash
+gem install ruby-heap
+```
 
 ## Usage
 
 ### Binary Heaps
 
 #### Binary Heap with min root
+
 While Heap initialize you can add any comparable object in it (not numbers only).
 Objects must have compare functions (>, >=, <, <=).
+
 ```ruby
 require 'Heap'
 
@@ -64,6 +71,7 @@ b_heap.sort         # [-15, -1, 0, 1, 2, 3, 6, 9, 200]
 ```
 
 #### Same practice with max root
+
 ```ruby
 require 'Heap'
 
@@ -97,6 +105,7 @@ b_heap.sort         # [200, 9, 6, 2, 1, 0, -1, -1, -15]
 ```
 
 #### Heap merging
+
 ```ruby
 require 'Heap'
 
@@ -127,7 +136,6 @@ max_heap = Heap::MultipleHeap::MaxHeap.new(7)
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at [Project page](https://github.com/pups3s/ruby-heap).
-
 
 ## License
 
