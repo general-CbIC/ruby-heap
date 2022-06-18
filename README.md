@@ -1,6 +1,7 @@
 # Heap (ruby heapsort)
 
 [![Gem Version](https://badge.fury.io/rb/ruby-heap.svg)](https://badge.fury.io/rb/ruby-heap)
+![Build workflow](https://github.com/general-CbIC/ruby-heap/actions/workflows/build.yml/badge.svg)
 [![Gem](https://img.shields.io/gem/dt/ruby-heap.svg)](https://rubygems.org/gems/ruby-heap)
 [![Code Climate](https://codeclimate.com/github/pups3s/ruby-heap/badges/gpa.svg)](https://codeclimate.com/github/pups3s/ruby-heap)
 
