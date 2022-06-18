@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - directory: /
+    target-branch: develop
+    open-pull-requests-limit: 5
+    package-ecosystem: bundler
+    rebase-strategy: auto
+    schedule:
+      interval: daily
