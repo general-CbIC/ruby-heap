@@ -5,9 +5,8 @@
 [![Gem](https://img.shields.io/gem/dt/ruby-heap.svg)](https://rubygems.org/gems/ruby-heap)
 [![Code Climate](https://codeclimate.com/github/pups3s/ruby-heap/badges/gpa.svg)](https://codeclimate.com/github/pups3s/ruby-heap)
 
-[Русская версия](README_ru.md)
+[Русская версия README](README_ru.md)
 
-# Heap (ruby heapsort)
 Gem is used to create Heap structs and sort via [Heapsort algorithm](https://en.wikipedia.org/wiki/Heapsort).
 
 ## Installation
