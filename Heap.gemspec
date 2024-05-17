@@ -5,8 +5,8 @@ require 'Heap/version'
 Gem::Specification.new do |spec|
   spec.name          = 'ruby-heap'
   spec.version       = Heap::VERSION
-  spec.authors       = ['Alexandr Sysoev']
-  spec.email         = ['sanchous.ok@gmail.com']
+  spec.authors       = ['Aleksandr Sysoev']
+  spec.email         = ['general@cbic-dev.com']
 
   spec.summary       = 'Binary or multiple heap'
   spec.homepage      = 'https://github.com/pups3s/ruby-heap'
